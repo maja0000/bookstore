@@ -11,12 +11,8 @@ const Item = require("../../models/Item");
 // @access  Public - not important now
 
 router.post("/", (req, res) => {
-  const newItem = new Item({
-    title: req.body.title,
-    autor: req.body.autor,
-    discription: req.body.discription,
-    poster: req.body.poster
-  });
+  const data = req.body;
+  const newItem = new Item(data);
   newItem.save().then(item => res.json(item));
 });
 ////////////GET////////////////////////////////////
@@ -27,7 +23,7 @@ router.post("/", (req, res) => {
 
 router.get("/all", (req, res) => {
   Item.find()
-    .sort({ name: 1 })
+    .sort({ title: 1 })
     .then(items => res.json(items));
 });
 

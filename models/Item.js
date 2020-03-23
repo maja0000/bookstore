@@ -5,19 +5,19 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema({
   title: {
     type: String,
-    requited: true
+    required: true
   },
   autor: {
     type: String,
-    requited: true
+    required: true
   },
   discription: {
     type: String,
-    requited: true
+    required: true
   },
   poster: {
     type: String,
-    requited: true
+    required: true
   }
 });
 module.exports = Item = mongoose.model("item", ItemSchema);
